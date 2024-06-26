@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.WaveTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-07-08T02:42:17" hostname="DESKTOP-531818M" time="0.005">
+  <properties/>
+  <testcase name="testStartWave()" classname="org.example.WaveTest" time="0.002"/>
+  <testcase name="testWaveInitialization()" classname="org.example.WaveTest" time="0.001"/>
+  <system-out><![CDATA[Oleada iniciada!
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.TowerDefenseGameTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-07-08T02:42:15" hostname="DESKTOP-531818M" time="1.684">
+  <properties/>
+  <testcase name="testStartWave()" classname="org.example.TowerDefenseGameTest" time="1.605"/>
+  <testcase name="testPlaceTower()" classname="org.example.TowerDefenseGameTest" time="0.041"/>
+  <testcase name="testGameState()" classname="org.example.TowerDefenseGameTest" time="0.034"/>
+  <system-out><![CDATA[mockMap
+PuntuaciÃ³n: 100
+Vida de la base: 50
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
