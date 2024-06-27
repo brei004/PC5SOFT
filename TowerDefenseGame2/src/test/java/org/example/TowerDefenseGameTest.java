@@ -11,6 +11,8 @@ public class TowerDefenseGameTest {
     private Map mockMap;
     @Mock
     private Player mockPlayer;
+    @Mock
+    private Wave wave;
     @InjectMocks
     private TowerDefenseGame game;
     @BeforeEach
@@ -18,9 +20,24 @@ public class TowerDefenseGameTest {
         MockitoAnnotations.openMocks(this);
     }
     @Test
+    public void testGameState() {
+        when(mockPlayer.getScore()).thenReturn(100);
+        when(mockPlayer.getBaseHealth()).thenReturn(50);
+        game.gameState();
+        verify(mockPlayer).getScore();
+        verify(mockPlayer).getBaseHealth();
+    }
+    @Test
+    public void testStartWave() {
+        game.startWave(wave);
+        verify(wave).start();
+    }
+    @Test
     public void testPlaceTower() {
         Tower mockTower = mock(Tower.class);
-        game.placeTower(mockTower, 2, 2);
-        verify(mockMap).placeTower(mockTower, 2, 2);
+        game.placeTower(mockTower, 1, 1);
+        verify(mockMap).placeTower(mockTower, 1, 1);
     }
+
+
 }

@@ -3,22 +3,25 @@ package org.example;
 import java.util.*;
 
 public class TowerDefenseGame {
-    private Map map;
-    private Player player;
-    private List<Wave> waves;
+    Map map;
+    Player player;
+    List<Wave> waves;
 
     public TowerDefenseGame() {
         this.map = new Map();
         this.player = new Player();
         this.waves = new ArrayList<>();
     }
-
+    public TowerDefenseGame(Map map, Player player, List<Wave> waves) {
+        this.map = map;
+        this.player = player;
+        this.waves = (waves != null) ? waves : new ArrayList<>();
+    }
     public void placeTower(Tower tower, int x, int y) {
         map.placeTower(tower, x, y);
     }
 
-    public void startWave() {
-        Wave wave = new Wave();
+    public void startWave(Wave wave) {
         waves.add(wave);
         wave.start();
     }
@@ -32,7 +35,7 @@ public class TowerDefenseGame {
     public static void main(String[] args) {
         TowerDefenseGame game = new TowerDefenseGame();
         game.placeTower(new Tower('T'), 0, 1);
-        game.startWave();
+        game.startWave(new Wave());
         game.gameState();
     }
 }

@@ -1,16 +1,3 @@
-## Configuración 
-
-
-
-
-![alt text](image-7.png)
-
-![alt text](image-8.png)
-
-
-
-
-
 
 # 1. Teoría:
 
@@ -207,11 +194,92 @@ Utilizar verify(...) para asegurarse de que los métodos fueron llamados con los
 
 • Escribe pruebas unitarias para la clase TowerDefenseGame utilizando Mockito para simular
 las dependencias de Map, Player y Wave.
+Se usan mocks para inducir dependencias 
+![alt text](image-20.png)
 
 • Implementa pruebas de integración que verifiquen la interacción entre las clases principales
 (TowerDefenseGame, Map, Player, Wave). Utiliza Mockito para controlar y verificar el
 comportamiento de las dependencias en estas pruebas.
+Las pruebas de integración a diferencia de las unitarias muestran como se comporta en conjunto diferentes objetos que interactúan entre sí 
+![alt text](image-21.png)
 
-• Configura un pipeline de integración continua (CI) que ejecute automáticamente las pruebas
-unitarias e informe sobre los resultados. Utiliza herramientas como Jenkins o GitHub Actions
-para implementar este pipeline (opcional).
+# 5. Teoría
+
+• Define qué son las pruebas de mutación y cómo contribuyen a la mejora de la calidad del
+software. Explica los tipos de operadores de mutación y su propósito.
+- Las pruebas de mutación nos permite evaluar la calidad de nuestras pruebas unitarias mediante cambios o mutaciones en nuestro código y verificar si las pruebas muestran esos cambios en el resultado.
+- Operadores:Lógicos, Aritmeticos, Relación,Constante, de flujo 
+
+• Discute las métricas utilizadas para evaluar la efectividad de las pruebas de mutación, como
+la tasa de mutación (mutation score) y la cobertura de mutación
+
+- Tasa de mutación: 
+Mide la efectividad de las pruebas al matar a los mutantes y es el cálculo de (mutantes muertos/mutantes totales) *100
+
+- Cobertura de mutación:
+Verifica la cantidad de lineas mutantes se ejecutaron del código
+
+# 5. Práctica
+
+• Configura una herramienta de pruebas de mutación, como PIT, en el proyecto Tower
+Defense. 
+Configuramos los plugins y pitest para realizar las pruebas mutantes
+![alt text](image-22.png)
+• Implementa pruebas de mutación para la clase Map y analiza los resultados. Asegúrate de
+identificar y corregir las pruebas unitarias que no detecten mutaciones.
+![alt text](image-23.png)
+
+Implementamos los tests para aumentar la cobertura
+![alt text](image-25.png)
+Se modifica la clase Wave 
+![alt text](image-26.png)
+
+Se agregan los test unitarios 
+![alt text](image-27.png)
+
+Aumenta la cobertura de mutación gracias a los nuevos tests
+
+![alt text](image-28.png)
+
+• Realiza un informe detallado sobre la calidad de las pruebas del proyecto Tower Defense,
+basado en los resultados de las pruebas de mutación. Incluye recomendaciones para
+mejorar la cobertura y efectividad de las pruebas
+![alt text](image-29.png)
+
+La cobertura no se da correctamente al no ver los sout que se muestran por consola en su mayoría, además se debería de crear tests comprobar los metodos placeTower,startWave y gameState dentro del main así aumentaría la cobertura de mutación.
+
+# 6. Teoría
+
+• Explica el concepto de diseño por contrato y cómo se aplica en el desarrollo de software.
+Discute las diferencias entre precondiciones, postcondiciones e invariantes.
+
+El diseño por contrato es una metodología en el desarrollo de software que define las responsabilidades y resultados esperados en diferentes componentes del software.
+
+- Precondiciones: Debe ser verdadera antes de que se ejecute un método
+- Postcondiciones: Debe ser verdadera luego de que se ejecute un método
+- Invariantes: Debe ser verdadero antes y luego de que la ejecución de cualquier método
+
+• Describe cómo el diseño por contrato puede mejorar la robustez y mantenibilidad del
+código.
+
+Robustez: Es más robusto debido a las pre y post condiciones que nos permiten detectar errores de forma temprana y así reducir comportamientos no definidos
+
+Mantenibilidad: Los pre, post e invariantes sirven como documentación que describe como se deberían de comportar los métodos y así poder refactorizar, además de poder mejorar nuestras pruebas
+
+
+# 6. Práctica
+
+• Aplica el diseño por contrato a la clase Tower. Define las precondiciones, postcondiciones e
+invariantes de los métodos principales de la clase.
+
+Aplicamos precondiciones para el caracter que se debe ingresar a la torre, un invariante que debe de ser siempre imprimible.
+
+![alt text](image-30.png)
+• Escribe pruebas unitarias que verifiquen el cumplimiento de los contratos definidos para la
+clase Tower. Utiliza herramientas como Java Assertions para implementar estas
+verificaciones.
+
+Test1: Valida que el caracter sea un simbolo
+Test2: Verifica que el caracter sea imprimible
+Test3: Verifica que el caracter sea el simbolo de una torre
+![alt text](image-31.png)

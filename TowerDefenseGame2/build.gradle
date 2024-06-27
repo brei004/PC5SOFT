@@ -31,7 +31,7 @@ test {
 // pitest
 pitest {
     targetClasses = ['org.example.*'] // Paquete de clases a mutar
-    targetTests = ['org.example.*'] //Agrego linea para decirle la carpeta de mis test
+    targetTests = ['org.example.*']
     mutators = ['DEFAULTS'] // Conjunto de mutadores por defecto
     outputFormats = ['HTML'] // Formato de salida del informe
     timestampedReports = false // Deshabilitar informes con marca de tiempo para facilitar la navegación

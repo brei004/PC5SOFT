@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.TowerTestContratos" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-06-27T04:50:58" hostname="DESKTOP-531818M" time="0.08">
+  <properties/>
+  <testcase name="testConstructorInvalidSymbol()" classname="org.example.TowerTestContratos" time="0.059"/>
+  <testcase name="testGetSymbol()" classname="org.example.TowerTestContratos" time="0.007"/>
+  <testcase name="testConstructorValidSymbol()" classname="org.example.TowerTestContratos" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
